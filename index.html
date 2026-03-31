@@ -2,344 +2,233 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Sathwik Linga Raju Uppu | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sathwik Uppu | Intelligent Systems & Backend</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Fira+Code:wght@400;500&display=swap');
+
+        :root {
+            --eco-green: #2D5A27;
+            --soft-leaf: #A7C957;
+            --earth-dark: #1A2F16;
+            --bg-silk: #FBFDFB;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-silk);
+            color: var(--earth-dark);
+            scroll-behavior: smooth;
+        }
+
+        .glass-nav {
+            background: rgba(251, 253, 251, 0.7);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(45, 90, 39, 0.1);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px) scale(0.95);
+            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        .bento-card {
+            background: white;
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bento-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(45, 90, 39, 0.08);
+            border-color: var(--soft-leaf);
+        }
+
+        .skill-tag {
+            background: rgba(167, 201, 87, 0.1);
+            color: var(--eco-green);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .skill-tag:hover {
+            background: var(--eco-green);
+            color: white;
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #2D5A27 0%, #6A994E 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .custom-cursor {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--eco-green);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s;
+        }
+    </style>
 </head>
-<body>
+<body class="antialiased">
 
-<header>
-    <h1>Sathwik Linga Raju Uppu</h1>
-    <p>Java Developer | Spring Boot | Fresher</p>
+    <div class="custom-cursor hidden md:block" id="cursor"></div>
 
-    <a href="Sathwik_Uppu_Java_Backend_Resume.pdf" download class="btn">
-        Download Resume
-    </a>
-</header>
-
-
-<section id="about">
-    <h2>About Me</h2>
-    <p>
-        I am a final-year engineering student passionate about Java and backend development.
-        I enjoy building real-world applications using Spring Boot and web technologies.
-    </p>
-</section>
-
-<section id="skills">
-    <h2>Skills</h2>
-    <ul>
-        <li>Java</li>
-        <li>Spring Boot</li>
-        <li>REST APIs</li>
-        <li>HTML, CSS, JavaScript</li>
-        <li>MySQL</li>
-        <li>Git & GitHub</li>
-        <li>Postman</li>
-        <li>Python</li>
-        <li>Data Structures and Algorithms</li>
-
-    </ul>
-</section>
-
-<section id="projects">
-    <h2>Projects</h2>
-
-    <div class="card">
-    <h3>AirLine Management System</h3>
-    <p>
-        A Java-based Airline Management System built to handle airline operations
-        like flight and passenger management, booking details, and ticketing.
-    </p>
-
-    <ul>
-        <li>User authentication and role management</li>
-        <li>Flight information management</li>
-        <li>Passenger booking and ticket tracking</li>
-        <li>Database integration using MySQL</li>
-    </ul>
-
-    <p><b>Technologies:</b> Java, MySQL</p>
-
-    <a href="https://github.com/sathwik69621/AirLineManagementSystem"
-       target="_blank">
-        View on GitHub
-    </a>
-    </div>
-
-    <div class="card">
-    <h3>Smart Issue Board</h3>
-
-    <p>
-        A web-based issue tracking system that allows users to create, assign,
-        prioritize, and track issues efficiently. Designed to help teams manage
-        tasks and monitor progress in real time.
-    </p>
-
-    <ul>
-        <li>User authentication using email and password</li>
-        <li>Create, update, and delete issues</li>
-        <li>Issue priority and status management (Open, In Progress, Done)</li>
-        <li>Filter and sort issues based on status and priority</li>
-        <li>Similar issue detection to avoid duplicates</li>
-    </ul>
-
-    <p>
-        <b>Technologies:</b>
-        HTML, CSS, JavaScript, Firebase Authentication, Firestore, Vercel
-    </p>
-
-    <a href="https://github.com/sathwik69621/SMARTISSUEBOARD" target="_blank">
-        View on GitHub
-    </a>
-    </div>
-
-    <div class="card">
-    <h3>Simple API (Spring Boot + Java)</h3>
-
-    <p>
-        A simple RESTful API created using Java and Spring Boot that demonstrates basic
-        GET endpoints and API responses tested with Postman.
-    </p>
-
-    <ul>
-        <li>GET <code>/hello</code> – returns a welcome message</li>
-        <li>GET <code>/info</code> – returns example JSON data</li>
-        <li>Demonstrates building REST endpoints with Spring Boot</li>
-    </ul>
-
-    <p><b>Technologies:</b> Java, Spring Boot</p>
-
-    <a href="https://github.com/sathwik69621/simple-api_spring-boot-with-java"
-       target="_blank">
-        View on GitHub
-    </a>
-    </div>
-
-
-</section>
-
-<section id="internships">
-    <h2>Internships</h2>
-
-    <!-- Internship 1 -->
-    <div class="card">
-        <h3>AI & Prompt Engineering Intern</h3>
-        <p><b>Organization:</b> VaultofCodes.in</p>
-        <p><b>Duration:</b> 10 Mar 2025 – 10 Apr 2025</p>
-        <p>
-            Worked on AI fundamentals and prompt engineering techniques.
-            Learned how to design effective prompts for AI models.
-        </p>
-
-        <p><b>Internship Certificate:</b></p>
-        <a href="images/internship_ai_prompt.png" target="_blank">
-            <img src="images/internship_ai_prompt.png"
-                 class="certificate-img"
-                 alt="AI and Prompt Engineering Internship Certificate">
+    <nav class="glass-nav fixed w-full top-0 z-50 px-6 py-4 flex justify-between items-center">
+        <div class="font-bold text-xl tracking-tighter text-gradient">SATHWIK.U</div>
+        <div class="hidden md:flex gap-8 text-sm font-semibold opacity-70">
+            <a href="#about" class="hover:text-green-700 transition-colors">Origins</a>
+            <a href="#projects" class="hover:text-green-700">Lab Works</a>
+            <a href="#internships" class="hover:text-green-700">Experience</a>
+            <a href="#certifications" class="hover:text-green-700">Validation</a>
+        </div>
+        <a href="Sathwik_Uppu_Java_Backend_Resume.pdf" target="_blank" rel="noopener noreferrer" class="bg-[#2D5A27] text-white px-5 py-2 rounded-full text-sm font-bold hover:shadow-lg hover:bg-green-800 transition-all">
+            Resume
         </a>
-    </div>
+    </nav>
 
-    <!-- Internship 2 -->
-    <div class="card">
-        <h3>Data Analytics Intern</h3>
-        <p><b>Organization:</b> SmartBridge (APSCHE)</p>
-        <p><b>Duration:</b> 2 Months</p>
-        <p>
-            Completed short-term internship on Data Analytics using Tableau.
-            Gained hands-on experience in data visualization and analysis.
-        </p>
+    <header class="pt-40 pb-20 px-6 max-w-6xl mx-auto flex flex-col items-center text-center">
+        <div class="reveal">
+            <span class="inline-block px-4 py-1 border border-green-200 rounded-full text-xs font-bold text-green-700 mb-6 uppercase tracking-widest">Graduating 2026</span>
+            <h1 class="text-5xl md:text-8xl font-extrabold tracking-tight mb-8">
+                Architecting <br/> <span class="text-gradient">Intelligent Backends.</span>
+            </h1>
+            <p class="max-w-2xl text-lg text-gray-500 mb-10 leading-relaxed mx-auto">
+                Java & Spring Boot specialist at MVSR College. Bridging the gap between robust server-side logic and high-performance AI systems.
+            </p>
+            <div class="flex gap-4 justify-center">
+                <a href="#projects" class="group flex items-center gap-2 font-bold text-green-900">
+                    Explore Projects <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+        </div>
+    </header>
 
-        <p><b>Internship Certificate:</b></p>
-        <a href="images/internship_data_analytics.png" target="_blank">
-            <img src="images/internship_data_analytics.png"
-                 class="certificate-img"
-                 alt="Data Analytics Internship Certificate">
-        </a>
-    </div>
+    <section id="about" class="py-20 px-6 max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bento-card p-8 rounded-3xl md:col-span-2 reveal">
+                <h3 class="text-2xl font-bold mb-4">The Technical DNA</h3>
+                <div class="flex flex-wrap gap-3">
+                    <span class="skill-tag">Java SE/EE</span>
+                    <span class="skill-tag">Spring Boot</span>
+                    <span class="skill-tag">RESTful APIs</span>
+                    <span class="skill-tag">MySQL Architecture</span>
+                    <span class="skill-tag">Generative AI</span>
+                    <span class="skill-tag">React.js</span>
+                    <span class="skill-tag">Python (ML)</span>
+                </div>
+            </div>
+            <div class="bento-card p-8 rounded-3xl bg-green-900 text-white reveal">
+                <i data-lucide="leaf" class="text-soft-leaf mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">Eco-Logic</h3>
+                <p class="text-sm opacity-80 leading-relaxed">
+                    Building sustainable, scalable codebases that prioritize efficiency and minimal technical debt.
+                </p>
+            </div>
+        </div>
+    </section>
 
-    <!-- Internship 3 -->
-    <div class="card">
-        <h3>Generative AI Intern</h3>
-        <p><b>Organization:</b> Pantech eLearning Pvt. Ltd.</p>
-        <p><b>Duration:</b> May 2025 – Jun 2025</p>
-        <p>
-            Worked on a mini project for image generation using GANs.
-            Learned concepts of Generative AI and model training basics.
-        </p>
+    <section id="projects" class="py-20 px-6 max-w-6xl mx-auto">
+        <div class="flex justify-between items-end mb-12 reveal">
+            <div>
+                <h2 class="text-4xl font-bold tracking-tighter">Selected Works</h2>
+                <p class="text-gray-400">Deployed solutions and GitHub repositories.</p>
+            </div>
+        </div>
 
-        <p><b>Internship Certificate:</b></p>
-        <a href="images/internship_generative_ai.png" target="_blank">
-            <img src="images/internship_generative_ai.png"
-                 class="certificate-img"
-                 alt="Generative AI Internship Certificate">
-        </a>
-    </div>
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="bento-card rounded-[2.5rem] p-1 reveal">
+                <div class="bg-gray-50 rounded-[2.2rem] h-64 flex items-center justify-center relative group">
+                    <i data-lucide="database" class="w-16 h-16 text-green-100 group-hover:scale-110 transition-transform duration-500"></i>
+                    <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-white/40 backdrop-blur-sm rounded-[2.2rem]">
+                        <a href="https://github.com/sathwik69621/AirLineManagementSystem" target="_blank" rel="noopener noreferrer" class="bg-green-800 text-white px-6 py-3 rounded-full flex items-center gap-2 font-bold shadow-xl">
+                            Source Code <i data-lucide="external-link" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="p-8">
+                    <h3 class="text-2xl font-bold mb-2">Airline Management System</h3>
+                    <p class="text-sm text-gray-500 mb-6">Full-scale Java backend integration with MySQL for managing flight logistics and ticketing.</p>
+                    <div class="flex gap-2">
+                        <span class="text-[10px] font-bold tracking-widest uppercase text-green-700">JAVA</span>
+                        <span class="text-[10px] font-bold tracking-widest uppercase text-green-700">SQL</span>
+                    </div>
+                </div>
+            </div>
 
-</section>
+            <div class="bento-card rounded-[2.5rem] p-1 reveal">
+                <div class="bg-gray-50 rounded-[2.2rem] h-64 flex items-center justify-center relative group">
+                    <i data-lucide="check-circle" class="w-16 h-16 text-green-100 group-hover:scale-110 transition-transform duration-500"></i>
+                    <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-white/40 backdrop-blur-sm rounded-[2.2rem]">
+                        <a href="https://github.com/sathwik69621/SMARTISSUEBOARD" target="_blank" rel="noopener noreferrer" class="bg-green-800 text-white px-6 py-3 rounded-full flex items-center gap-2 font-bold shadow-xl">
+                            Source Code <i data-lucide="external-link" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="p-8">
+                    <h3 class="text-2xl font-bold mb-2">Smart Issue Board</h3>
+                    <p class="text-sm text-gray-500 mb-6">Real-time issue tracking system with duplicate detection algorithms.</p>
+                    <div class="flex gap-2">
+                        <span class="text-[10px] font-bold tracking-widest uppercase text-green-700">FIREBASE</span>
+                        <span class="text-[10px] font-bold tracking-widest uppercase text-green-700">JS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section id="certifications">
-    <h2>Certifications</h2>
+    <footer class="py-20 px-6 text-center bg-white border-t border-gray-100">
+        <h2 class="text-4xl font-bold mb-8 reveal">Ready to start a <br/><span class="text-gradient">conversation?</span></h2>
+        <div class="flex justify-center gap-8 mb-12 reveal font-bold text-sm">
+            <a href="https://linkedin.com/in/sathwik-uppu-674983259/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-green-600 transition-colors">
+                LinkedIn <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+            </a>
+            <a href="https://github.com/sathwik69621" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-green-600 transition-colors">
+                GitHub <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+            </a>
+            <a href="mailto:uppusathwik1354@gmail.com" class="flex items-center gap-2 hover:text-green-600 transition-colors">
+                Email
+            </a>
+        </div>
+        <p class="text-xs text-gray-400 font-mono">© 2026 SATHWIK UPPU // VIZIANAGARAM, AP</p>
+    </footer>
 
-    <!-- Certification 1 -->
-    <div class="card">
-        <h3>Salesforce Agentforce Specialist</h3>
-        <p><b>Issued By:</b> Salesforce (Trailhead)</p>
-        <p><b>Issued On:</b> April 19, 2025</p>
+    <script>
+        lucide.createIcons();
 
-        <a href="images/salesforce_agentforce_specialist.png" target="_blank">
-            <img src="images/salesforce_agentforce_specialist.png"
-                 class="certificate-img"
-                 alt="Salesforce Agentforce Specialist Certificate">
-        </a>
-    </div>
+        // Custom Cursor Logic
+        const cursor = document.getElementById('cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.transform = `translate(${e.clientX - 10}px, ${e.clientY - 10}px)`;
+        });
 
-    <!-- Certification 2 -->
-    <div class="card">
-        <h3>Salesforce AI Associate</h3>
-        <p><b>Issued By:</b> Salesforce (Trailhead)</p>
-        <p><b>Issued On:</b> April 12, 2025</p>
+        // Intersection Observer for Reveal effect
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
 
-        <a href="images/salesforce_ai_associate.png" target="_blank">
-            <img src="images/salesforce_ai_associate.png"
-                 class="certificate-img"
-                 alt="Salesforce AI Associate Certificate">
-        </a>
-    </div>
-
-</section>
-
-<section id="certificates">
-    <h2>Certificates</h2>
-
-    <!-- Certificate 1 -->
-    <div class="card">
-        <h3>Introduction to Modern AI</h3>
-        <p><b>Issued By:</b> Cisco Networking Academy</p>
-
-        <a href="images/cert_intro_modern_ai.png" target="_blank">
-            <img src="images/cert_intro_modern_ai.png"
-                 class="certificate-img"
-                 alt="Introduction to Modern AI Certificate">
-        </a>
-    </div>
-
-    <!-- Certificate 2 -->
-    <div class="card">
-        <h3>Java Full Stack</h3>
-        <p><b>Issued By:</b> TalentNext (Wipro)</p>
-
-        <a href="images/cert_java_full_stack.png" target="_blank">
-            <img src="images/cert_java_full_stack.png"
-                 class="certificate-img"
-                 alt="Java Full Stack Certificate">
-        </a>
-    </div>
-
-    <!-- Certificate 3 -->
-    <div class="card">
-        <h3>REST API – Micro Experience</h3>
-        <p><b>Issued By:</b> Crio.Do</p>
-
-        <a href="images/cert_rest_api_crio.png" target="_blank">
-            <img src="images/cert_rest_api_crio.png"
-                 class="certificate-img"
-                 alt="REST API Certificate">
-        </a>
-    </div>
-
-    <!-- Certificate 4 -->
-    <div class="card">
-        <h3>The Java Language</h3>
-        <p><b>Issued By:</b> Coursera (LearnQuest)</p>
-
-        <a href="images/cert_java_coursera.png" target="_blank">
-            <img src="images/cert_java_coursera.png"
-                 class="certificate-img"
-                 alt="Java Language Certificate">
-        </a>
-    </div>
-
-    <!-- Certificate 5 -->
-    <div class="card">
-        <h3>SQL (Basic)</h3>
-        <p><b>Issued By:</b> HackerRank</p>
-
-        <a href="images/cert_sql_hackerrank.png" target="_blank">
-            <img src="images/cert_sql_hackerrank.png"
-                 class="certificate-img"
-                 alt="SQL Basic Certificate">
-        </a>
-    </div>
-
-    <!-- Certificate 6 -->
-<div class="card">
-    <h3>Python Essentials 1</h3>
-    <p><b>Issued By:</b> Cisco Networking Academy</p>
-
-    <a href="images/cert_python_essentials_1.png" target="_blank">
-        <img src="images/cert_python_essentials_1.png"
-             class="certificate-img"
-             alt="Python Essentials 1 Certificate">
-    </a>
-</div>
-
-<!-- Certificate 7 -->
-<div class="card">
-    <h3>Python Essentials 2</h3>
-    <p><b>Issued By:</b> Cisco Networking Academy</p>
-
-    <a href="images/cert_python_essentials_2.png" target="_blank">
-        <img src="images/cert_python_essentials_2.png"
-             class="certificate-img"
-             alt="Python Essentials 2 Certificate">
-    </a>
-</div>
-
-<!-- Certificate 8 -->
-<div class="card">
-    <h3>Machine Learning with Python</h3>
-    <p><b>Issued By:</b> freeCodeCamp</p>
-    <p><b>Duration:</b> ~300 hours</p>
-
-    <a href="images/cert_ml_python_freecodecamp.png" target="_blank">
-        <img src="images/cert_ml_python_freecodecamp.png"
-             class="certificate-img"
-             alt="Machine Learning with Python freeCodeCamp Certificate">
-    </a>
-</div>
-
-
-
-</section>
-
-
-<section id="contact">
-    <h2>Contact</h2>
-
-    <p><b>Phone:</b> 6300447456</p>
-    <p><b>Email:</b> uppusathwik1354@gmail.com</p>
-
-    <p>
-        <a href="https://github.com/sathwik69621" target="_blank">GitHub</a> |
-        <a href="https://www.linkedin.com/in/sathwik-uppu-674983259/" target="_blank">LinkedIn</a>
-    </p>
-</section>
-
-<footer>
-    <p>© 2026 Sathwik Uppu</p>
-</footer>
-
-<script src="script.js"></script>
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
 </body>
-
-<nav>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#internships">Internships</a>
-    <a href="#certifications">Certifications</a>
-    <a href="#certificates">Certificates</a>
-    <a href="#contact">Contact</a>
-</nav>
-
 </html>
